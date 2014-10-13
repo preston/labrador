@@ -66,6 +66,14 @@ ActiveRecord::Schema.define(version: 20141009210243) do
     t.string   "slug"
   end
 
+  create_table "system", force: true do |t|
+    t.string "title",            null: false
+    t.string "subtitle",         null: false
+    t.string "about",            null: false
+    t.string "copyright_holder", null: false
+    t.string "copyright_link",   null: false
+  end
+
   create_table "users", force: true do |t|
     t.boolean  "admin",                  default: false
     t.string   "email",                  default: "",    null: false

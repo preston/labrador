@@ -1,13 +1,5 @@
 class Collapse < ActiveRecord::Migration
 
-	create_table "system", force: true do |t|
-		t.string   "title",	null: false
-		t.string   "subtitle",	null: false
-		t.string   "about", null: false
-		t.string   "copyright_holder", null: false
-		t.string   "copyright_link", null: false
-	end
-
 	create_table "experiments", force: true do |t|
 		t.string   "name",                            null: false
 		t.string   "description",        limit: 4096, null: false
