@@ -1,0 +1,68 @@
+doctype html
+html
+	head
+		title = @system.title
+		= stylesheet_link_tag :application, :media => "all"
+		= javascript_include_tag :application
+		= csrf_meta_tag
+
+	body class="#{yield(:body_class)}"
+
+		.navbar.navbar-static-top
+			.navbar-inner
+				.container-fluid
+					a.btn.btn-navbar data-target=".nav-collapse" data-toggle="collapse"
+						span.icon-bar
+						span.icon-bar
+						span.icon-bar
+					a.brand href="#{root_path}" = @system.subtitle
+
+					.container-fluid.nav-collapse
+						ul.nav
+							li = link_to('Contact', contact_path)
+							li = link_to('Publications', publications_path)
+							li = link_to('People', people_path)
+							li = link_to('Experiments', experiments_path)
+
+						ul.nav.pull-right
+							- if user_signed_in?
+								li = link_to current_user.email, edit_user_registration_path
+								li = link_to "Sign Out", 	destroy_user_session_path, method: :delete
+								- if current_user.admin
+									li = link_to 'Admin mode!'
+							- else
+								li = link_to 'sign in', new_user_session_path
+								li = link_to 'register', 	new_user_registration_path
+	
+			
+
+			
+
+		.container
+			= bootstrap_flash
+			= yield
+
+			
+
+		footer.row-fluid
+	
+			
+			section.span4#partners
+				h3 Partners
+				ul
+					- Partner.all.each do |p|
+						li = link_to p.name, p.url.html_safe
+			
+				- if current_user.try(:admin?)
+					= link_to '[manage]', partners_path
+			
+			section.span8#about
+			
+				h4 About
+				= @system.about
+
+
+		p#copyright
+			| Copyright &copy; #{Time.now.year} 
+			a href="#{@system.copyright_link}" alt="#{@system.copyright_holder}" = @system.copyright_holder
+			| . All rights reserved.

@@ -1,0 +1,13 @@
+tr id="publication_#{row.id}" class="publication"
+	td
+		- if row.url.nil? || row.url.empty?
+			= row.citation
+		- else
+			= link_to row.citation, row.url.html_safe
+
+	td = row.year
+	td
+		- if current_user.try(:admin?)
+			.btn-group
+				= link_to text_with_icon('Edit', 'edit'), edit_publication_path(row), :class => 'btn'
+				= link_to text_with_icon('Delete', 'trash'), publication_path(row), :method => :delete, data: {confirm: 'Are you sure?'}, :class => 'btn', :id => "delete_publication_#{row.id}_button"

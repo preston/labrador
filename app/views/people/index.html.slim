@@ -1,0 +1,8 @@
+- content_for :body_class do 'people' end
+
+h1 People
+- if current_user.try(:admin?)
+	= link_to text_with_icon('Add', 'plus'), new_person_path, :class => 'btn btn-large btn-primary'
+
+.row-fluid
+	= render :partial => 'people/row', :collection => @people

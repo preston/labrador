@@ -1,0 +1,28 @@
+<tr id="partner_<%= row.id %>" class="partner">
+	<td>
+		<h1>
+			<% if(row.url.nil? || row.url.empty?) %>
+				<%= row.name %>
+			<% else %>
+				<%= link_to row.name, row.url.html_safe %>
+			<% end %>
+			</h1>
+		<p><%= row.description %></p>
+	</td>
+	<td>
+		<% if current_user.try(:admin?) %>
+			<%= link_to image_tag('icons/Modify.png', :title => 'Edit') + 'Edit', edit_partner_path(row), :class => 'button' %>
+			<%= link_to image_tag('icons/Delete.png', :title => 'Delete') + 'Delete', partner_path(row), :method => :delete, :class => 'button', :id => "delete_partner_#{row.id}_button" %>
+		<% end %>
+	</td>
+</tr>
+
+
+<script>
+	$('#delete_partner_<%= row.id %>_button').click(function() {
+		return ajaxDeleteRow(
+			'<%= row.id %>',
+			$('#partner_<%= row.id %>'),
+			'<%= partner_path(row) %>');
+	});
+</script>

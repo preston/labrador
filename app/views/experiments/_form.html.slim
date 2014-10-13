@@ -1,0 +1,72 @@
+= form_for(@experiment, html: {class: 'form-horizontal'}) do |f|
+	- if @experiment.errors.any?
+		#error_explanation
+			h2
+				= pluralize(@experiment.errors.count, "error")
+				|  prohibited this experiment from being saved:
+
+			ul
+				- @experiment.errors.full_messages.each do |msg|
+					li = msg
+
+	.control-group
+		= f.label :name, class: 'control-label'
+		.controls
+			= f.text_field :name, required: true
+	
+	.control-group
+		= f.label :description, class: 'control-label'
+		.controls
+			= f.text_area :description, required: true
+	
+	.control-group
+		= f.label :contact, class: 'control-label'
+		.controls
+			= f.text_field :contact, required: true
+	
+	.control-group
+		= f.label :home_url, class: 'control-label'
+		.controls
+			= f.url_field :home_url, required: true
+	
+	.control-group
+		= f.label :image, class: 'control-label'
+		.controls
+		    = image_tag f.object.image.url(:small)
+      		br
+			= f.file_field :image
+	
+	.control-group
+		= f.label :issues_url, class: 'control-label'
+		.controls
+			= f.url_field :issues_url
+	
+	.control-group
+		= f.label :source_url, class: 'control-label'
+		.controls
+			= f.url_field :source_url
+	
+	.control-group
+		= f.label :download_url, class: 'control-label'
+		.controls
+			= f.url_field :download_url
+	
+	.control-group
+		= f.label :documentation_url, class: 'control-label'
+		.controls
+			= f.url_field :documentation_url
+		
+	.control-group
+		= f.label :meta_keywords, class: 'control-label'
+		.controls
+			= f.text_field :meta_keywords
+	
+	.control-group
+		= f.label :meta_description, class: 'control-label'
+		.controls
+			= f.text_area :meta_description
+	
+	.control-group
+		.controls
+			= f.submit 'Save', class: 'btn btn-primary'
+

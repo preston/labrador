@@ -1,0 +1,21 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  description: MyString
+  home_url: MyString
+  documentation_url: MyString
+  contact: MyString
+  meta_keywords: MyString
+  meta_description: MyString
+
+two:
+  name: MyString
+  description: MyString
+  home_url: MyString
+  issues_url: MyString
+  source_url: MyString
+  download_url: https://github.com/preston
+  contact: MyString
+  meta_keywords: MyString
+  meta_description: MyString

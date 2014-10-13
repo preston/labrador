@@ -1,0 +1,14 @@
+com:
+  name: Mattis
+  description: Cras justo odio, dapibus ac facilisis in, egestas eget quam. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
+  url: http://example.com
+
+org:
+  name: Inceptos Dapibus
+  description: Donec id elit non mi porta gravida at eget metus. Sed posuere consectetur est at lobortis. Donec ullamcorper nulla non metus auctor fringilla. Maecenas faucibus mollis interdum.
+  url: http://example.org
+
+edu:
+  name: Venenatis Fermentum Nullam
+  description: Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.
+  url: http://example.edu

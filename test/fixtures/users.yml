@@ -1,0 +1,43 @@
+admin:
+  email: admin@example.com
+  encrypted_password: cdc5aa8ea7285d0ec475face50239eccbec4772fe5cba6114b9b854b7fb09d4c28143b022807ea1c75eb7036ebf527e5d1dba2c7a912e90d02f8e725cd7b8204 # "password"
+  reset_password_token: !!null 
+  reset_password_sent_at: !!null 
+  remember_created_at: !!null 
+  sign_in_count: 1
+  current_sign_in_at: '2011-06-03 00:45:57.046731'
+  last_sign_in_at: '2011-06-03 00:45:57.046731'
+  current_sign_in_ip: 127.0.0.1
+  last_sign_in_ip: 127.0.0.1
+  password_salt: lXKK9o3YkXc9xWrWHKNq
+  confirmation_token: !!null 
+  confirmed_at: '2011-06-03 00:45:57.040546'
+  confirmation_sent_at: '2011-06-03 00:44:11.313989'
+  failed_attempts: 0
+  unlock_token: !!null 
+  locked_at: !!null 
+  created_at: '2011-06-03 00:44:11.314099'
+  updated_at: '2011-06-03 00:45:57.047210'
+  admin: t
+
+alice:
+  email: alice@example.com
+  encrypted_password: cdc5aa8ea7285d0ec475face50239eccbec4772fe5cba6114b9b854b7fb09d4c28143b022807ea1c75eb7036ebf527e5d1dba2c7a912e90d02f8e725cd7b8204 # "password"
+  reset_password_token: !!null 
+  reset_password_sent_at: !!null 
+  remember_created_at: !!null 
+  sign_in_count: 1
+  current_sign_in_at: '2011-06-03 00:45:57.046731'
+  last_sign_in_at: '2011-06-03 00:45:57.046731'
+  current_sign_in_ip: 127.0.0.1
+  last_sign_in_ip: 127.0.0.1
+  password_salt: lXKK9o3YkXc9xWrWHKNq
+  confirmation_token: !!null 
+  confirmed_at: '2011-06-03 00:45:57.040546'
+  confirmation_sent_at: '2011-06-03 00:44:11.313989'
+  failed_attempts: 0
+  unlock_token: !!null 
+  locked_at: !!null 
+  created_at: '2011-06-03 00:44:11.314099'
+  updated_at: '2011-06-03 00:45:57.047210'
+  admin: f

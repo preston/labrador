@@ -1,0 +1,9 @@
+- content_for :body_class do 'experiments' end
+article
+	h1 Experiments
+	- if current_user.try(:admin?)
+		= link_to text_with_icon('Add', 'plus'), new_experiment_path, :class => 'btn btn-large btn-primary'
+		br
+
+	#experiments.row-fluid
+		= render :partial => 'experiments/row', :collection => @experiments

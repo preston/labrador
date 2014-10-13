@@ -1,0 +1,43 @@
+.experiments {
+
+	.container {
+		background: image-url('cork.png') repeat 0 0 #fff;
+
+		> article > h1 {
+			font-family: 'Impact Label';
+		}
+
+		#experiments {
+			padding: 20px;
+		}
+
+		.experiment {
+			position: relative;
+			margin: 20px 4px;
+			padding: 20px;
+			background: #eee;
+			display: inline-block;
+			// background: image-url('textures/leather_1.png') repeat;
+			text-align: left;
+			border-radius: 2px;
+		    box-shadow: 0 4px 4px #222222, inset 0 40px 100px #bbb;
+		    // -webkit-box-shadow: 0 4px 4px #222222;
+		
+			img.tape {
+				position: absolute;
+				top: -18px;
+				left: 40%;
+				width: 100px;
+			}
+		}
+
+
+.experiment.teaser {background: #222;}
+
+	}
+}
+
+
+
+
+

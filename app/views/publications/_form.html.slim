@@ -1,0 +1,30 @@
+= form_for(@publication, html: {class: 'form-horizontal'}) do |f|
+
+  - if @publication.errors.any?
+    #error_explanation
+      h2
+        = pluralize(@publication.errors.count, "error")
+        |  prohibited this publication from being saved:
+
+      ul
+        - @publication.errors.full_messages.each do |msg|
+          li = msg
+
+  .control-group
+    = f.label :citation, class: 'control-label'
+    .controls
+      = f.text_area :citation, required: true
+
+  .control-group
+    = f.label :year, class: 'control-label'
+    .controls
+      = f.number_field :year, required: true
+
+  .control-group
+    = f.label :url, class: 'control-label'
+    .controls
+      = f.url_field :url
+
+  .control-group
+    .controls
+      = f.submit "Submit", class: 'btn btn-primary'

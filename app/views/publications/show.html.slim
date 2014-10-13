@@ -1,0 +1,13 @@
+p#notice = notice
+
+dl.dl-horizontal
+	dt Citation
+	dd = @publication.citation
+	dt Year
+	dd = @publication.year
+	dt Url
+	dd = @publication.url
+
+= link_to 'Edit', edit_publication_path(@publication), class: 'btn btn-primary'
+br
+= link_to 'All Publications', publications_path

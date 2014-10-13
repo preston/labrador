@@ -1,0 +1,16 @@
+- content_for :body_class do 'publications' end
+
+article
+	h1 Publications
+	- if current_user.try(:admin?)
+		= link_to text_with_icon('Add', 'plus'), new_publication_path, :class => 'btn btn-large btn-primary'
+
+table.table.table-condensed.table-striped
+	thead
+		tr
+			th Citation
+			th Year
+			th
+	tbody
+		= render :partial => 'publications/row', :collection => @publications.sort {|a,b| b.year <=> a.year}
+

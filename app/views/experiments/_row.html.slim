@@ -1,0 +1,34 @@
+.span6.experiment data-id="#{row.id}"
+	= image_tag 'tape.png', :class => 'tape'
+
+	.media
+		.pull-left
+			= image_tag row.image.url(:medium), class: "media-object, img-polaroid"
+			br
+			p = link_to(text_with_icon('Download', 'file'), row.download_url.html_safe, :class => 'btn btn-primary') unless(row.download_url.	nil? 	||	 row.download_url == '')
+
+			- if current_user.try(:admin?)
+				p
+					.btn-group
+						= link_to text_with_icon('Edit', 'edit'), edit_experiment_path(row), :class => 'btn'
+						= link_to text_with_icon('Delete', 'trash'), experiment_path(row), :method => :delete, :class => 'btn', :id => "		delete_experiment_		#{row.id}_button", :style => 'aoeu'
+
+		.media-body
+			.media-heading
+
+				- if row.home_url.nil?
+					= row.name
+				- else
+					= link_to row.name, row.home_url.html_safe
+
+
+			p = row.description
+	
+			p
+				= link_to('homepage ', row.home_url.html_safe) unless(row.home_url.nil? || row.home_url == '')
+				= link_to('issues ', row.issues_url.html_safe) unless(row.issues_url.nil? || row.issues_url == '')
+				= link_to('source ', row.source_url.html_safe) unless(row.source_url.nil? || row.source_url == '')
+				= link_to('documentation ', row.documentation_url.html_safe) unless(row.documentation_url.nil? || row.documentation_url == '')
+				br
+				|  Contact: 
+				= row.contact.html_safe

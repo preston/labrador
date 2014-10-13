@@ -1,0 +1,10 @@
+<h1>Partners</h1>
+<% if current_user.try(:admin?) %>
+	<%= link_to image_tag('icons/Add.png') + 'Add', new_partner_path, :class => 'button' %>
+<% end %>
+
+<table>
+	<tbody>
+		<%= render :partial => 'partners/row', :collection => @partners %>
+	</tbody>
+</table>

@@ -1,0 +1,25 @@
+p#notice = notice
+
+h1 = @experiment.name
+.pull-right
+  = image_tag @experiment.image.url(:large), class: 'img-polaroid'
+= link_to 'View All Experiments', experiments_path
+p = @experiment.description
+= link_to text_with_icon('Edit', 'edit'), edit_experiment_path(@experiment), class: 'btn'
+
+dl.dl-horizontal
+  dt Home url
+  dd = @experiment.home_url
+  dt Issues url
+  dd = @experiment.issues_url
+  dt Source url
+  dd = @experiment.source_url
+  dt Documentation url
+  dd = @experiment.documentation_url
+  dt Contact
+  dd = @experiment.contact
+  dt Meta keywords
+  dd = @experiment.meta_keywords
+  dt Meta description
+  dd = @experiment.meta_description
+

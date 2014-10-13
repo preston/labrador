@@ -1,0 +1,15 @@
+.span6
+	.person id="person_#{row.id}"
+		.media
+			.pull-left
+				= image_tag row.avatar.url(:medium), class: "media-object img-polaroid"
+			.media-body
+				h4.media-heading = row.name
+				p = row.biography
+	
+				- if current_user.try(:admin?)
+					.btn-group
+						= link_to text_with_icon('Edit', 'edit'), edit_person_path(row), :class => 'btn'
+						= link_to text_with_icon('Delete', 'trash'), person_path(row), :method => :delete, :class => 'btn', :id => "delete_person_#{	row.id	}_button"
+		
+			

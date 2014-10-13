@@ -1,0 +1,50 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require jquery-ui
+ *= require_tree .
+*/
+
+@font-face { font-family: "Impact Label"; src: url('/fonts/Impact Label.ttf'); } 
+@font-face { font-family: "Impact Label Reversed"; src: url('/fonts/Impact Label Reversed.ttf'); } 
+
+body {
+	background: image-url("textures/carbon_fibre.png") repeat;
+	// background-color: pink;
+}
+
+.container {
+	background: image-url("textures/45degreee_fabric.png") repeat;
+	width: 90% !important;
+	margin: 10px;
+	border-radius: 4px;
+	border: 1px solid #888;
+	box-shadow: 0 10px 10px #000;
+	padding: 20px;
+}
+
+.redacted { font-family: "Impact Label"; color: #222; font-weight: bold; font-size: 18pt;}
+p.redacted {font-family: "Impact Label Reversed"; background-color: #fff; color: #222; font-weight: bold; font-size: 14pt;}
+
+footer {
+	padding: 20px;
+	width: auto !important;
+	margin: 0;
+	line-height: 1.5em;
+	background: #ddd;
+	border: 1px solid #666;
+	box-shadow: 0 0px 20px #000, inset 0 0 300px #999;
+}
+
+#copyright {
+	text-align: center;
+	color: #777;
+}

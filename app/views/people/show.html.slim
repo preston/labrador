@@ -1,0 +1,11 @@
+p#notice = notice
+
+= image_tag @person.avatar.url(:medium)
+
+h1 = @person.name
+= link_to 'Edit', edit_person_path(@person), class: 'btn btn-primary'
+br
+= link_to 'Show Everyone', people_path
+
+h3 Biography
+p = @person.biography
