@@ -1,7 +1,7 @@
 System.create!(
 	title: 'Preston Lee Ventures',
 	subtitle: 'Business, Technology and Entrepreneurship',
-	about: '',
+	about: 'The stuff dreams are made of.',
 	copyright_link: 'http://www.prestonlee.com',
 	copyright_holder: 'Preston Lee'
 )
@@ -23,7 +23,7 @@ n = 5
 		e.save!
 end
 
-Partner.create!(name: 'ASU', description: 'Arizona State University' url: 'http://www.asu.edu')
+Partner.create!(name: 'ASU', description: 'Arizona State University', url: 'http://www.asu.edu')
 
 admin = User.create(email: 'admin@example.com', password: 'password', password_confirmation: 'password')
 admin.confirmed_at = Time.now
